@@ -6,6 +6,6 @@ public interface Contract {
     }
 
     interface Presenter {
-        fun chk()
+
     }
 }
