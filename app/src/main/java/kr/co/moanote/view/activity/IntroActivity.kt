@@ -1,7 +1,12 @@
 package kr.co.moanote.view.activity
 
 import android.content.Intent
+import android.os.Handler
 import android.view.View
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kr.co.moanote.R
 import kr.co.moanote.databinding.ActivityIntroBinding
 import kr.co.moanote.presenter.Contract
@@ -33,7 +38,6 @@ class IntroActivity : BaseActivity(), Contract.View {
     }
 
     override fun destroyActivity() {
-
     }
 
     // *****************************************************************************
@@ -54,8 +58,12 @@ class IntroActivity : BaseActivity(), Contract.View {
     // FUNC
     // *****************************************************************************
     private fun goScreen() {
-        val login = presenter.chkAutoLogin(this)
+        var login:BaseActivity = presenter.chkAutoLogin(this@IntroActivity)
 
-        startActivity(Intent(this, login::class.java))
+        var handler = Handler()
+        handler.postDelayed(Runnable {
+            startActivity(Intent(this@IntroActivity, login::class.java))
+            finish()
+        }, 3000)
     }
 }
