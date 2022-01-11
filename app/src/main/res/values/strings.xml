@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoaNote</string>
+
+    <string name="intro_title">모아노트</string>
 </resources>
