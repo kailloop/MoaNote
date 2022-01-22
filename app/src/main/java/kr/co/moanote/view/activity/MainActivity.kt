@@ -6,6 +6,7 @@ import android.view.View
 import kr.co.moanote.R
 import kr.co.moanote.presenter.Contract
 import kr.co.moanote.presenter.MainPresenter
+import kr.co.moanote.util.Util
 import kr.co.moanote.view.BaseActivity
 
 class MainActivity : BaseActivity(), Contract.View {
@@ -14,6 +15,7 @@ class MainActivity : BaseActivity(), Contract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Util.MOA_LOG("On MainActivity")
         presenter = MainPresenter(this)
     }
 
@@ -35,9 +37,5 @@ class MainActivity : BaseActivity(), Contract.View {
 
     override fun viewClick(v: View?) {
 
-    }
-
-    override fun showResult(answer: Int) {
-        
     }
 }

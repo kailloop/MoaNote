@@ -10,5 +10,7 @@ object Util {
         }
     }
 
+    fun test() {
 
+    }
 }
