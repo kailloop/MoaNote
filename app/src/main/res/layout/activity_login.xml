@@ -1,18 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="LoginActivity"
-        android:textColor="@color/black_font_color"
-        android:textSize="@dimen/title_font_size"
-        android:textStyle="bold"/>
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/txt_input_height"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:text="ID"
+                android:gravity="center"
+                android:textSize="@dimen/title_font_size"
+                android:textColor="@color/black_font_color"
+                android:background="@null"/>
+            <EditText
+                android:id="@+id/txt_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|left"
+                android:paddingHorizontal="@dimen/edit_padding_horizontal"
+                android:textSize="@dimen/default_font_size"
+                android:textColor="@color/black_font_color"
+                android:textStyle="bold"
+                android:background="@drawable/bg_txt"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/txt_input_height"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:text="PW"
+                android:gravity="center"
+                android:textSize="@dimen/title_font_size"
+                android:textColor="@color/black_font_color"
+                android:background="@null"/>
+            <EditText
+                android:id="@+id/txt_pw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|left"
+                android:paddingHorizontal="@dimen/edit_padding_horizontal"
+                android:textSize="@dimen/default_font_size"
+                android:textColor="@color/black_font_color"
+                android:textStyle="bold"
+                android:background="@drawable/bg_txt"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/txt_input_height"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/teal_200"
+            android:text="@string/txt_btn_login"
+            android:textSize="@dimen/super_font_size"/>
+    </LinearLayout>
+
+</RelativeLayout>

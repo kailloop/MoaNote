@@ -2,7 +2,6 @@ package kr.co.moanote.presenter
 
 import android.content.Context
 import kr.co.moanote.model.IntroModel
-import kr.co.moanote.model.vo.UserData
 import kr.co.moanote.util.Util
 import kr.co.moanote.view.BaseActivity
 import kr.co.moanote.view.activity.LoginActivity
