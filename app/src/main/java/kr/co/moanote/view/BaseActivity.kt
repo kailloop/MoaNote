@@ -3,9 +3,10 @@ package kr.co.moanote.view
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import kr.co.moanote.presenter.Contract
 import kr.co.moanote.util.Util
 
-abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
+abstract class BaseActivity : AppCompatActivity(), View.OnClickListener, Contract.View {
 
     abstract fun createActivity()
     abstract fun pauseActivity()

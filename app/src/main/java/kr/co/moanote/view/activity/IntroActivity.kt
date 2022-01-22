@@ -1,5 +1,6 @@
 package kr.co.moanote.view.activity
 
+import android.animation.Animator
 import android.content.Intent
 import android.os.Handler
 import android.view.View
@@ -14,7 +15,7 @@ import kr.co.moanote.presenter.IntroPresenter
 import kr.co.moanote.util.Util
 import kr.co.moanote.view.BaseActivity
 
-class IntroActivity : BaseActivity(), Contract.View {
+class IntroActivity : BaseActivity() {
 
     private val binding by lazy { ActivityIntroBinding.inflate(layoutInflater) }
     private lateinit var presenter: IntroPresenter
@@ -23,7 +24,7 @@ class IntroActivity : BaseActivity(), Contract.View {
     // LIFE CYCLE
     // *****************************************************************************
     override fun createActivity() {
-        setContentView(R.layout.activity_intro)
+        setContentView(binding.root)
         presenter = IntroPresenter(this)
 
         init()
@@ -44,14 +45,47 @@ class IntroActivity : BaseActivity(), Contract.View {
     // INIT UI
     // *****************************************************************************
     private fun init() {
-        goScreen()
+        binding.lottieIntro.setOnClickListener(this)
+        binding.bgIntro.setOnClickListener(this)
+        binding.lottieIntro.playAnimation()
+        binding.lottieIntro.apply {
+            progress = 0f
+        }
+
+        binding.lottieIntro.addAnimatorListener(object:Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator?) {
+
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+
+            }
+
+            override fun onAnimationRepeat(animation: Animator?) {
+
+            }
+        })
+
+        // goScreen()
     }
 
     // *****************************************************************************
     // EVENT
     // *****************************************************************************
     override fun viewClick(v: View?) {
-
+        when(v) {
+            binding.lottieIntro -> {
+                Util.MOA_LOG("작동 확인")
+                binding.lottieIntro.progress = 0f
+            }
+            binding.bgIntro -> {
+                Util.MOA_LOG("배경 확인")
+            }
+        }
     }
 
     // *****************************************************************************
@@ -63,6 +97,7 @@ class IntroActivity : BaseActivity(), Contract.View {
         var handler = Handler()
         handler.postDelayed(Runnable {
             startActivity(Intent(this@IntroActivity, login::class.java))
+            overridePendingTransition(0, 0)
             finish()
         }, 3000)
     }

@@ -9,7 +9,7 @@ import kr.co.moanote.presenter.MainPresenter
 import kr.co.moanote.util.Util
 import kr.co.moanote.view.BaseActivity
 
-class MainActivity : BaseActivity(), Contract.View {
+class MainActivity : BaseActivity() {
     private lateinit var presenter: Contract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {

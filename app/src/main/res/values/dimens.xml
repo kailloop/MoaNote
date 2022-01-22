@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- TEXT  -->
+    <dimen name="txt_input_height">60dp</dimen>
+    <dimen name="edit_padding_horizontal">16dp</dimen>
+
     <!--  FONT  -->
     <dimen name="title_font_size">22sp</dimen>
     <dimen name="super_font_size">20sp</dimen>
